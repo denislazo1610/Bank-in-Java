@@ -26,6 +26,7 @@ public class Main {
 
     public static void action(char choice, HashMap <String, String> accounts, HashMap<String, Double> dinero){        
         if ((choice == 'a') || (choice == 'A')) {
+            //action
             cls();
             System.out.println("Create an account");
             optionA(accounts, dinero);
