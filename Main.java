@@ -135,13 +135,51 @@ public class Main {
             System.out.println("This is how much you have: " + plata);
             openingAccount(account, accounts, dinero);
         }else if(choice == 'B'){
-            System.out.println("Depositing or retiring money");
+            System.out.println("What do you want to do? Depositing or retiring money ?");
+            String desicion;
+            Scanner decidir = new Scanner(System.in);
+            desicion = decidir.nextLine();
+
+            if((desicion.equals("Depositing")) || (desicion.equals("depositing")) ){
+                System.out.println("How much are you going to deposit? ");
+                double deposito;
+                Scanner respuesta = new Scanner(System.in);
+                deposito = respuesta.nextDouble();
+                dinero.put(account, dinero.get(account) + deposito);
+
+            }else if ((desicion.equals("Retiring")) || (desicion.equals("retiring"))){
+                System.out.println("How much are you going to retire? ");
+                double retirar;
+                Scanner respuesta = new Scanner(System.in);
+                retirar = respuesta.nextDouble();
+                dinero.put(account, dinero.get(account) - retirar);
+            }
+
             openingAccount(account, accounts, dinero);
         }else if (choice == 'C'){
             System.out.println("Changing unername");
+            System.out.println("What do you want to replace your username? ");
+            String answer;
+            Scanner respuesta = new Scanner(System.in);
+            answer = respuesta.nextLine();
+            accounts.put(answer, accounts.get(account));
+            dinero.put(answer, dinero.get(account));
+            accounts.remove(account);
+            dinero.remove(account);
+
+            account = answer;
+
             openingAccount(account, accounts, dinero);
         } else if (choice == 'D'){
             System.out.println("Changin password");
+            System.out.println("What do you want to replace your password? ");
+
+            String answer;
+            Scanner respuesta = new Scanner(System.in);
+            answer = respuesta.nextLine();
+
+            accounts.put(account, answer);
+
             openingAccount(account, accounts, dinero);
         } else if (choice == 'E'){
             System.out.println("Loging out from account...");
