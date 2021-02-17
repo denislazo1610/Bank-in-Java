@@ -1,9 +1,8 @@
 import java.util.HashMap;
 import java.util.Scanner;
-import java.io.IOException;
 
 public class Main {
-    public static void main (String[] args){
+    public static void main(String[] args){
         char choice;
         HashMap<String, String> accounts = new HashMap<String, String>();
         HashMap<String, Double> dinero = new HashMap<String, Double>();
@@ -40,7 +39,6 @@ public class Main {
 
         }else if ((choice == 'b') || (choice == 'B')) {
             cls();
-            System.out.println("Opening an account");
             optionB(accounts, dinero);
             option();
 
@@ -51,14 +49,13 @@ public class Main {
             action(choice, accounts, dinero);
 
         }else if ((choice == 'c') || (choice == 'C')){
-            cls();
             System.out.println("Exit, Thank You!");
+
 
         }
     }
 
     public static void optionA(HashMap <String, String> accounts, HashMap<String, Double> dinero){
-        cls();
         System.out.println("You choose option A");
         String username;
         String password;
@@ -80,8 +77,7 @@ public class Main {
     }
 
     public static void optionB(HashMap <String, String> accounts, HashMap<String, Double> dinero){
-        cls();
-        System.out.println("Option B is being selected!");
+        System.out.println("You choose option B");
         System.out.println("These are all the accounts");
         System.out.println("");
         
@@ -103,16 +99,14 @@ public class Main {
         
         System.out.println("");
         String comprobar = accounts.get(cuenta);
-        System.out.println(comprobar);
         
-        System.out.println("This is the password " + password);
-        System.out.println("This is comprobar " + comprobar);
 
         if (password.equals(comprobar)){
-            System.out.println("");
+            cls();
             System.out.println("Opening account....");
             openingAccount(cuenta, accounts, dinero);
         }else {
+            cls();
             System.out.println("Wrong password");
             System.out.println("Try again later");
         }
@@ -120,7 +114,6 @@ public class Main {
     }
 
     public static void openingAccount(String account,HashMap <String, String> accounts, HashMap<String, Double> dinero){
-        cls();
         System.out.println("Welcome " + account);
         char choice;
         System.out.println("");
@@ -140,10 +133,12 @@ public class Main {
             System.out.println("Looking money");
             Double plata = dinero.get(account);
             System.out.println("This is how much you have: " + plata);
-            System.out.println("Is this information correct? ");
-            String answer;
+            System.out.println("Is this correct? ");
+            String desicion;
             Scanner decidir = new Scanner(System.in);
-            answer = decidir.nextLine();
+            desicion = decidir.nextLine();
+            cls();
+
             openingAccount(account, accounts, dinero);
         }else if(choice == 'B'){
             cls();
@@ -159,6 +154,7 @@ public class Main {
                 Scanner respuesta = new Scanner(System.in);
                 deposito = respuesta.nextDouble();
                 dinero.put(account, dinero.get(account) + deposito);
+                cls();
 
             }else if ((desicion.equals("Retire")) || (desicion.equals("retire"))){
                 cls();
@@ -167,6 +163,10 @@ public class Main {
                 Scanner respuesta = new Scanner(System.in);
                 retirar = respuesta.nextDouble();
                 dinero.put(account, dinero.get(account) - retirar);
+                cls();
+            }else {
+                cls();
+                System.out.println("Invalid Input");
             }
 
             openingAccount(account, accounts, dinero);
@@ -183,7 +183,7 @@ public class Main {
             dinero.remove(account);
 
             account = answer;
-
+            cls();
             openingAccount(account, accounts, dinero);
         } else if (choice == 'D'){
             cls();
@@ -193,8 +193,8 @@ public class Main {
             String answer;
             Scanner respuesta = new Scanner(System.in);
             answer = respuesta.nextLine();
-
             accounts.put(account, answer);
+            cls();
 
             openingAccount(account, accounts, dinero);
         } else if (choice == 'E'){
