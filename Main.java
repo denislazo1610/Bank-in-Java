@@ -104,8 +104,55 @@ public class Main {
         System.out.println("This is the password " + password);
         System.out.println("This is comprobar " + comprobar);
 
-        System.out.println(password.equals(comprobar));
+        if (password.equals(comprobar)){
+            System.out.println("Opening account....");
+            openingAccount(cuenta, accounts, dinero);
+        }else {
+            System.out.println("Wrong password");
+            System.out.println("Try again later");
+        }
 
-        System.out.println(dinero);
+    }
+
+    public static void openingAccount(String account,HashMap <String, String> accounts, HashMap<String, Double> dinero){
+        System.out.println("Welcome " + account);
+        char choice;
+        System.out.println("");
+        System.out.println("Option A to see money");
+        System.out.println("Option B to deposit/retire money");
+        System.out.println("Option C to change username");
+        System.out.println("Option D to change password");
+        System.out.println("Option E to log out from accoutn");
+        System.out.println("What do you want to see? ");
+        System.out.println("");
+        Scanner input = new Scanner(System.in);
+        choice =input.nextLine().charAt(0);
+        choice = Character.toUpperCase(choice);
+
+        if (choice == 'A'){
+            System.out.println("Looking money");
+            Double plata = dinero.get(account);
+            System.out.println("This is how much you have: " + plata);
+            openingAccount(account, accounts, dinero);
+        }else if(choice == 'B'){
+            System.out.println("Depositing or retiring money");
+            openingAccount(account, accounts, dinero);
+        }else if (choice == 'C'){
+            System.out.println("Changing unername");
+            openingAccount(account, accounts, dinero);
+        } else if (choice == 'D'){
+            System.out.println("Changin password");
+            openingAccount(account, accounts, dinero);
+        } else if (choice == 'E'){
+            System.out.println("Loging out from account...");
+        } else {
+            System.out.println("Invalid input");
+            openingAccount(account, accounts, dinero);
+        }
+        
+
+        // for (String i : dinero.keySet()){
+            // System.out.println(i);
+        // }
     }
 }
