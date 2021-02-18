@@ -18,8 +18,8 @@ This program is a simulation of a bank. It is going to collect information of us
 # Useful Websites
 
 {Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [W3schools.com](https://www.w3schools.com/java/default.asp)
+* [Tutorials Point](https://www.tutorialspoint.com/java/lang/object_equals.htm)
 
 # Future Work
 
