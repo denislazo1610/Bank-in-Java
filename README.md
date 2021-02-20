@@ -11,19 +11,19 @@ This program is a simulation of a bank. It is going to collect information of us
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+I used Hashmaps for the first time, create a class in Java, functions, and using the equals.
 
-{Describe the programming language that you used and any libraries.}
+I used the libraries: HashMaps and Scanner.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
+
 * [W3schools.com](https://www.w3schools.com/java/default.asp)
 * [Tutorials Point](https://www.tutorialspoint.com/java/lang/object_equals.htm)
 
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Create another file with the information of the bank account. 
+* Be able to tranfer money from one user to another
+* Have the option to save the password, so the user will not need to remember the password. 
